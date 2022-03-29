@@ -10,11 +10,94 @@ const rl = readline.createInterface({
   output: process.stdout
 });
 
+const positionFirstVowel = (word) => {
+  //Variables that store the value of the index for each vowel in a given word
+  let aIdx = word.indexOf("a");
+  let eIdx = word.indexOf("e");
+  let iIdx = word.indexOf("i");
+  let oIdx = word.indexOf("o");
+  let uIdx = word.indexOf("u");
 
+  // Variable for the output.  Currently set to -1 as no vowels exist in input
+  let answer = -1;
+
+  // Determine the "better" answer as it goes through the if/else if statements for each vowel
+  if (aIdx < 0) {
+
+  }
+  else if (answer < 0) {
+    answer = aIdx
+  }
+  else if (answer > aIdx && aIdx != -1) {
+    answer = aIdx
+  }
+
+  if (eIdx < 0) {
+
+  }
+  else if (answer < 0) {
+    answer = eIdx
+  }
+  else if (answer > eIdx && eIdx != -1) {
+    answer = eIdx
+  }
+
+  if (iIdx < 0) {
+
+  }
+  else if (answer < 0) {
+    answer = iIdx
+  }
+  else if (answer > iIdx && iIdx != -1) {
+    answer = iIdx
+  }
+
+  if (oIdx < 0) {
+
+  }
+  else if (answer < 0) {
+    answer = oIdx
+  }
+  else if (answer > oIdx && oIdx != -1) {
+    answer = oIdx
+  }
+
+  if (uIdx < 0) {
+
+  }
+  else if (answer < 0) {
+    answer = uIdx
+  }
+  else if (answer > uIdx && uIdx != -1) {
+    answer = uIdx
+  }
+
+  return answer
+
+}
+
+//Declare a function pigLatin that takes in the parameter of word
 const pigLatin = (word) => {
+  word = word.toLowerCase().trim()
 
-  // Your code here
+  //Determines if the word starts with a vowel
+  if (positionFirstVowel(word) == 0) {
+    return word + 'yay'
+  }
 
+  //Determine if the word has no vowels.  
+  if (positionFirstVowel(word) < 0) {
+    return word + 'yay'
+  }
+
+  //Determine if the word has consonants. If it does, take
+  //the portion of the word from the vowel position to the end of word 
+  //and add it to portion of the beginning of the word up to vowel
+  //position and add 'ay' to complete translation
+  if (positionFirstVowel(word) > 0) {
+    let vowelPosition = positionFirstVowel(word)
+    return word.substring(vowelPosition) + word.substring(0, vowelPosition) + 'ay'
+  }
 }
 
 // the first function called in the program to get an input from the user
@@ -22,7 +105,7 @@ const pigLatin = (word) => {
 // to close it ctrl + C
 const getPrompt = () => {
   rl.question('word ', (answer) => {
-    console.log( pigLatin(answer) );
+    console.log(pigLatin(answer));
     getPrompt();
   });
 }
