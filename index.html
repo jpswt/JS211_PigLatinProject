@@ -1,15 +1,28 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="utf-8">
-    <title></title>
-    <script src="main.js"></script>
-  </head>
-  <body>
-    <h1>Hello World!</h1>
-    <hr/>
-    <div id="display-element"></div>
-    <button onclick="displayDate()">Click Me</button>
-    <hr/>
-  </body>
+
+<head>
+  <meta charset="utf-8">
+  <title></title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <header>
+    <img src="./pig.png" alt="clipart pic of pig saying Oinkyay, Oinkyay" />
+    <h1>Pig Latin Translator</h1>
+  </header>
+  <main>
+    <div>
+      <textarea name="text" id="inputText" cols="30" rows="10" class="input-text"></textarea>
+    </div>
+    <div id="outputText" class="output-text"></div>
+    <div class="buttons">
+      <button id="translate" class="translate">Translate</button>
+      <button id="reset" class="reset">Reset</button>
+    </div>
+  </main>
+  <script src="index.js"></script>
+</body>
+
 </html>
