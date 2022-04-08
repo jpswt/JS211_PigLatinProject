@@ -45,6 +45,7 @@ textarea {
 	resize: none;
 	border-radius: 0.4rem;
 	border: none;
+	outline-color: hsl(300, 32%, 43%);
 }
 
 .output-text {
