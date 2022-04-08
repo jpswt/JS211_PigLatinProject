@@ -78,21 +78,21 @@ inputText.addEventListener('keyup', (e) => {
 // will take the word and run it through the pig latin function
 // for single and sentences.  
 translate.addEventListener('click', (e) => {
-    // Declaring a variable that will split userInput and store them in an array
+    // Declaring a variable that will split userInput and store the words in an array
     const words = userInput.split(' ')
     // Declaring a variable that will take every word in the array and run it
-    // through the pigLatin function creating a new array
+    // through the pigLatin function creating an output array
     const output = words.map(everyWord => pigLatin(everyWord))
     // Using the join method on output array to create string that is text
     // for the outputText
     outputText.innerText = output.join(' ')
+    // Reset the input text value to default placeholder text when translate button is clicked
     inputText.value = ''
 })
 
 // Adding an event listener to the reset button that when clicked
-// will reset the userInput, inputText and outputText
+// will reset the userInput and outputText
 reset.addEventListener('click', (e) => {
     userInput = ''
-    inputText.value = ''
     outputText.innerText = ''
 })
